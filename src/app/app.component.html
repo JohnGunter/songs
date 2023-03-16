@@ -1,0 +1,20 @@
+<div class="contentContainer">
+	<div class="maincontent">
+		<p class="maincopy">This page contains the lyrics information for the songs that I am most fond of. Below you will find a list of song titles and the artist(s) that have made them. To read the lyrics of a particular song, click the song title.</p>
+	</div>
+	<div ng-app="lyricsApp" ng-controller="LyricsController" class="songInfo">
+		<div id="userGrid" class="grid-position">
+			<ag-grid-angular
+				class="ag-theme-alpine"
+				[rowData]="rowData$ | async"
+				[columnDefs]="columnDefs"
+				[defaultColDef]="defaultColDef"
+				[rowSelection]="rowSelection"
+				(firstDataRendered)="onFirstDataRendered($event)"
+				(gridReady)="onGridReady($event)"
+				(cellClicked)="showLyrics($event)"></ag-grid-angular>
+		</div>
+	</div><br>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,20 @@
+<div class="modal-header">
+	<h5 class="modal-title" id="exampleModalLabel">{{ title }}</h5>
+	<button
+	  type="button"
+	  class="btn btn-secondary"
+	  aria-label="Close"
+	  (click)="modalRef.close()"
+	>Close</button>
+  </div>
+  <div class="modal-body">
+	<h6>{{ title }}</h6>
+	<div [innerHtml]="lyrics">{{ lyrics }}</div>
+	<div style="text-align: right;">by {{ bandSinger }}</div>
+	<div style="text-align: right;" [innerHTML]="copyRight">Copyright: {{ copyRight }}</div>
+  </div>
+  <div class="modal-footer">
+	<button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+	  Close
+	</button>
+  </div>
